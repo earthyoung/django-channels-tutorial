@@ -1,0 +1,12 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+    <h1>채팅방 목록</h1>
+    <ul>
+        {% for room in room_list %}
+            <li>
+                <a href="{% url 'chat:room_chat' room.pk %}">{{room.name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
